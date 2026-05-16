@@ -1,3 +1,12 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* reset css */
 
 *,
@@ -69,9 +78,9 @@ input {
 .grid {
     display: grid;
     grid-template-areas:
-        "my-header my-header"
-        "my-aside my-main"
-        "my-aside my-main";
+        "my-header my-header my-header"
+        "my-aside my-main my-main"
+        "my-aside my-main my-main";
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 8rem 0;
 }
@@ -85,10 +94,13 @@ input {
 .header__wrap {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header__logo {
     font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 117%;
     text-transform: uppercase;
     margin-right: 7rem;
 }
@@ -99,6 +111,8 @@ input {
 
 .header__nav a {
     font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 117%;
 }
 
 .header__nav a:not(:last-child) {
@@ -122,6 +136,8 @@ input {
     border-radius: .8rem;
     padding: 0 4rem 0 1rem;
     font-size: 2rem;
+    font-weight: 400;
+    line-height: 115%;
     color: #fff;
 }
 
@@ -138,10 +154,12 @@ input {
 
 .header__date__hour {
     font-size: 2rem;
+    line-height: 115%;
 }
 
 .header__date__day {
     font-size: 1.2rem;
+    line-height: 117%;
 }
 
 .header__account {
@@ -154,6 +172,249 @@ input {
 .header__account img {
     border-radius: 50%;
 }
+
+.main-display__trailer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 20.2rem;
+    border-radius: 1.6rem;
+    background: rgba(0, 0, 0, .4) url(../img/unsplash_o4c2zoVhjSw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1.9rem;
+}
+
+.main-display__trailer__views {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 119%;
+}
+
+.main-display__trailer__header {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 117%;
+}
+
+.main-display__trailer__date {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 114%;
+    margin-top: 1rem;
+}
+
+.button-play__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.07);
+    width: 8.1rem;
+    height: 8.1rem;
+    border-radius: 50%;
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-play {
+    position: fixed;
+    left: 38%;
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid transparent;
+    border-left: 2.5rem solid #fff;
+    border-bottom: 1.5rem solid transparent;
+    border-radius: 0.2rem;
+    background: none;
+}
+
+.small {
+    width: 4rem;
+    height: 4rem;
+    left: 7%;
+}
+
+.button-play__wrap.small .button-play {
+    width: 0;
+    height: 0;
+    border-top: .7rem solid transparent;
+    border-left: 1.1rem solid #fff;
+    border-bottom: .7rem solid transparent;
+    border-radius: 0.2rem;
+}
+
+.small-plus {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 10%;
+}
+
+.button-play__wrap.small-plus .button-play {
+    width: 0;
+    height: 0;
+    left: 36%;
+    top: 28%;
+    border-top: .48rem solid transparent;
+    border-left: .78rem solid #fff;
+    border-bottom: .48rem solid transparent;
+    /* border-radius: 0.2rem; */
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3.5rem 0;
+}
+
+.title__left,
+.title__right {
+    display: flex;
+    align-items: center;
+}
+
+.title__main {
+    font-size: 2rem;
+    line-height: 115%;
+    margin-right: 2rem;
+}
+
+.title__count {
+    font-size: 2rem;
+    line-height: 115%;
+    color: rgba(255, 255, 255, .2);
+    padding-top: .3rem;
+}
+
+.title__right span {
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: rgba(255, 255, 255, .2);
+}
+
+.title__right img {
+    width: 2rem;
+    height: 1.6rem;
+    margin-left: .4rem;
+}
+
+.trending {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 6rem; */
+}
+
+.trending__item {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 47%;
+    height: 25.1rem;
+    background: url(../img/unsplash_phIFdC6lA4E.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1.6rem;
+}
+
+.trending__plash {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 1.6rem;
+    padding: .4rem 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 114%;
+}
+
+.trending__footer,
+.popular__footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #FFFFFF12;
+    border-radius: 1.6rem;
+    backdrop-filter: blur(8px);
+    padding: 1.8rem 1rem 1.8rem 6.4rem;
+}
+
+.trending__header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.trending__date {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 120%;
+    margin-top: .5rem;
+}
+
+.trending__time {
+    background: #fff;
+    border-radius: 1.6rem;
+    padding: .4rem 1.3rem;
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 114%;
+}
+
+.popular {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular__item {
+    display: flex;
+    align-items: flex-end;
+    width: 30%;
+    height: 19.2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.40) 100%), url(../img/unsplash_11SgH7U6TmI.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1.6rem;
+}
+
+.popular__footer {
+    padding: .8rem 1.9rem .8rem 6.4rem;
+}
+
+.popular__header {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.popular__date {
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 100%;
+    margin-top: .5rem;
+}
+
+.popular__rating {
+    display: flex;
+    align-items: center;
+}
+
+.popular__rating span {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 120%;
+    margin-left: .4rem;
+}
+
 
 /* setka */
 
