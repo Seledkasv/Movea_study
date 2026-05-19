@@ -192,6 +192,11 @@ input {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 119%;
+    z-index: 1;
+}
+
+.main-display__trailer__name {
+    z-index: 1;
 }
 
 .main-display__trailer__header {
@@ -220,6 +225,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .button-play {
@@ -332,6 +338,7 @@ input {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 114%;
+    z-index: 1;
 }
 
 .trending__footer,
@@ -345,6 +352,7 @@ input {
     border-radius: 1.6rem;
     backdrop-filter: blur(8px);
     padding: 1.8rem 1rem 1.8rem 6.4rem;
+    z-index: 1;
 }
 
 .trending__header {
@@ -376,11 +384,13 @@ input {
 }
 
 .popular__item {
+    position: relative;
     display: flex;
     align-items: flex-end;
     width: 30%;
     height: 19.2rem;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.40) 100%), url(../img/unsplash_11SgH7U6TmI.jpg);
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.40) 100%), url(../img/unsplash_11SgH7U6TmI.jpg); */
+    background: url(../img/unsplash_11SgH7U6TmI.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 1.6rem;
@@ -413,6 +423,190 @@ input {
     font-weight: 400;
     line-height: 120%;
     margin-left: .4rem;
+}
+
+.main-display__trailer::after,
+.trending__item::after,
+.popular__item::after,
+.aside__item::after {
+    content: '';
+    position: absolute;
+    display: block;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.40) 100%);
+    border-radius: 1.6rem;
+    z-index: 0;
+}
+
+.aside {
+    padding-right: 5.9rem;
+}
+
+.aside__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.6rem;
+}
+
+.aside__header {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 115%;
+}
+
+.aside__sort {
+    display: flex;
+}
+
+.aside__sort-text {
+    margin-right: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: rgba(255, 255, 255, .4);
+}
+
+.aside__sort-select {
+    display: flex;
+    align-items: center;
+}
+
+.aside__sort-select span {
+    font-size: 1.4rem;
+    line-height: 114%;
+    font-weight: 400;
+}
+
+.aside__sort-img {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.4rem;
+}
+
+.aside__sort-img img {
+    width: .7rem;
+    height: .7rem;
+    cursor: pointer;
+}
+
+.aside__sort-img img:nth-child(1) {
+    margin-bottom: .3rem;
+}
+
+.aside__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22.6rem;
+    background: url(../img/unsplash_E6kNLrM0FUA.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    padding: 1.9rem 0 1.9rem 1.9rem;
+}
+
+.aside__item:nth-child(3) {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+
+.aside__views {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 119%;
+    z-index: 1;
+}
+
+.aside__footer {
+    position: relative;
+    z-index: 1;
+}
+
+.aside__item-name {
+    margin-bottom: .5rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 117%;
+}
+
+.aside__item-date {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 114%;
+}
+
+.aside__bottom {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2.5rem 0 2rem 2.5rem;
+    margin-left: -2.5rem;
+}
+
+.aside__favourite {
+    margin-bottom: 6rem;
+}
+
+.aside__favourite-text {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 115%;
+    margin-bottom: 2rem;
+}
+
+.aside__genre-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-right: 5rem;
+}
+
+.aside__genre {
+    font-size: 1.2rem;
+    line-height: 117%;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+}
+
+.purple {
+    background: #8066F6;
+}
+
+.orange {
+    background: #E1784F;
+}
+
+.blue {
+    background: #63CFE1;
+}
+
+.grey {
+    background: #2B2A2F;
+}
+
+.aside__add {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    cursor: pointer;
+}
+
+.aside__add-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: #2B2A2F;
+    margin-right: .5rem;
 }
 
 
