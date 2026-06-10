@@ -65,6 +65,7 @@ input {
 
 .header {
     grid-area: my-header;
+    box-shadow: 0 .4rem 1rem rgba(255, 255, 255, 0.07);
 }
 
 .main {
@@ -82,7 +83,7 @@ input {
         "my-aside my-main my-main"
         "my-aside my-main my-main";
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: 8rem 0;
+    gap: 3rem 0;
 }
 
 .grid-init {
@@ -171,6 +172,11 @@ input {
 
 .header__account img {
     border-radius: 50%;
+}
+
+.main-display {
+    padding-top: 5rem;
+    padding-left: 2.9rem;
 }
 
 .main-display__trailer {
@@ -439,7 +445,30 @@ input {
 }
 
 .aside {
-    padding-right: 5.9rem;
+    position: relative;
+}
+
+.aside::after {
+    content: url(/img/Polygon\ 4.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.6rem;
+    background: #fcfcfe;
+    border-radius: 2rem;
+    position: absolute;
+    top: 10.7rem;
+    right: -1rem;
+    cursor: pointer;
+}
+
+.aside__top {
+    padding-right: 2.3rem;
+    padding-left: 2.4rem;
+    border-right: .1rem solid #1c1d1f;
+    padding-bottom: 4rem;
+    padding-top: 5rem;
 }
 
 .aside__title {
@@ -509,20 +538,13 @@ input {
 
 .aside__item:nth-child(3) {
     margin-top: 3rem;
-    margin-bottom: 4rem;
 }
-
 
 .aside__views {
     position: relative;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 119%;
-    z-index: 1;
-}
-
-.aside__footer {
-    position: relative;
     z-index: 1;
 }
 
@@ -544,11 +566,10 @@ input {
     flex-direction: column;
     background: rgba(255, 255, 255, 0.02);
     padding: 2.5rem 0 2rem 2.5rem;
-    margin-left: -2.5rem;
 }
 
 .aside__favourite {
-    margin-bottom: 6rem;
+    padding-bottom: 3rem;
 }
 
 .aside__favourite-text {
@@ -607,6 +628,29 @@ input {
     border-radius: 50%;
     background: #2B2A2F;
     margin-right: .5rem;
+}
+
+.aside__footer {
+    position: relative;
+    z-index: 1;
+}
+
+.aside__footer-bottom {
+    position: relative;
+    padding-top: 3rem;
+    z-index: 1;
+}
+
+.aside__footer-bottom::before {
+    content: '';
+    display: block;
+    width: 6.5rem;
+    height: 0.1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 20%);
 }
 
 
@@ -703,3 +747,29 @@ input {
 }
 
 /* setka */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 3rem 0;
+    z-index: 1000;
+    display: none;
+}
+
+.modal__inner {
+    width: 100rem;
+    height: 60rem;
+}
+
+.active {
+    display: flex;
+}
